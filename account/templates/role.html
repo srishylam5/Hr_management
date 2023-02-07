@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+
+<center>
+    <h1>CHANGE ROLE</h1>
+
+
+ <form method="POST">
+    {% csrf_token %}
+   USERNAME & 
+   <br>
+   ASSIGNED ROLES :: 
+   <br><select multiple="multiple"  name="username">
+        {% for i in a %}
+            <option value="{{i.user.username}}">{{i.user.username}}--{{i.role}}</option>
+           
+            
+        {% endfor %}
+    </select><br><br>
+
+  CHANGE ROLE  : : <select name="role">
+    <option>---</option>
+    <option value="Network administrator">Network administrator</option>
+    <option value="User experience designer">User experience designer</option>
+    <option value="Systems analyst">Systems analyst</option>
+    <option value="Database administrator">Database administrator</option>
+    <option value="Software application packager">Software application packager</option>
+    <option value="Full-stack developer">Full-stack developer</option>
+    <option value="Senior software engineer">Senior software engineer</option>
+    <option value="Data scientist">Data scientist</option>
+    <option value="Mobile developer">Mobile developer</option>
+    <option value="Help Desk">Help Desk</option>
+   </select><br><br>
+
+   <input type="submit" name="submit" value="change">
+
+
+
+
+
+
+
+
+
+
+ </form>
+
+</center>

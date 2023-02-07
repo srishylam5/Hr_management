@@ -1,0 +1,40 @@
+
+
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+
+
+<form action="" method="POST" style="text-align:center">
+            
+    {% csrf_token %}
+    <h1>EDIT PROFILE</h1>
+    Username : <input type="text" name="username" placeholder="USERNAME"   value = "{{i.user.username}}" readonly><br><br>
+    Firstname : <input type="text" name="firstname" placeholder="FIRSTNAME"   value = "{{i.user.first_name}}" ><br><br>
+   Lastname : <input type="text" name="lastname" placeholder="LASTNAME"   value = "{{i.user.last_name}}"><br><br>
+   Email : <input type="email" name="email" placeholder="EMAIL"   value = "{{i.user.email}}" readonly><br><br>
+   Location : <input type="text" name="address" placeholder="LOCATION"   value = "{{i.address}}" readonly><br><br>
+   Salary : <input type="text" name="salary" placeholder="SALARY"   value = "{{i.salary}}" readonly><br><br>
+   Department : <input type="text" name="department" placeholder="DEPARTMENT"   value = "{{i.department}}" readonly><br><br>
+   Language : <input type="text" name="language" placeholder="Language"   value = "{{i.language}}"><br><br>
+   Date of Birth : <input type="date" name="date" placeholder="DATE OF BIRTH"   value = "{{i.dob}}">  {{i.dob}}<br><br>
+   Mobile Number : <input type="text" name="mobile_number" placeholder="MOBILE NUMBER"   value = "{{i.user.mobile_number}}" required><br><br>
+
+  Bank : <select name="bank">
+        <option value="BANK OF BARODA"> BANK OF BARODA</option>
+            <option value="UNION BANK">UNION BANK</option>
+            <option value="STATE BANK OF INDIA">STATE BANK OF INDIA</option>
+            <option value="AXIS BANK LTD">AXIS BANK LTD</option>
+            <option value="CANARA BANK">CANARA BANK</option>
+            <option value="CITI BANK">CITI BANK</option>
+            <option value="HDFC BANK">HDFC BANK</option>
+            <option value="ICICI BANK">ICICI BANK</option>
+    </select><br><br>
+ Account Number : <input type="text" name="account" placeholder="ACCOUNT NUMBER"   value = "{{i.account_no}}"><br><br>
+   Ifsc Code : <input type="text" name="ifsc" placeholder="IFSC CODE"   value = "{{i.ifsc_code}}"><br><br>
+
+    <input type="submit" name="editv" value="Edit">
+
+
+</form>
+
+

@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+
+<h1>EDIT PROFILE</h1>
+
+<form action="" method="POST">
+            
+    {% csrf_token %}
+
+    <input type="text" name="username" placeholder="USERNAME"   value = "{{a.username}}" readonly>
+    <input type="text" name="firstname" placeholder="FIRSTNAME"   value = "{{a.first_name}}" required>
+    <input type="text" name="lastname" placeholder="LASTNAME"   value = "{{a.last_name}}" required>
+    <input type="email" name="email" placeholder="EMAIL"   value = "{{a.email}}" required>
+    <input type="text" name="mobile_number" placeholder="MOBILE NUMBER"   value = "{{a.mobile_number}}" required>
+    <input type="submit" name="editv" value="Edit">
+</form>

@@ -1,0 +1,36 @@
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+
+  <div class="card">
+      <center>
+    <h3>LIST OF MANAGER DETAILS</h3><br>
+    
+    </center> 
+              
+    
+    <table class="table table-hover">
+      <thead>
+        <th>Hr Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Mobile Number</th>
+        <th>Employee ID</th>
+        <th>Action</th>
+        <tbody>
+          {% for i in a %}
+        <tr>
+          <td>{{i.user.first_name}} {{i.user.last_name}}</td>
+          <td>{{i.user.username}}</td>
+          <td>{{i.user.email}}</td>
+          <td>{{i.profile}}</td>
+          <td>{{i.user.mobile_number}}</td>
+          <td>{{i.emp_id}}</td>
+          <td><a href={% url 'manageredit' i.user.id %}>Edit</a><br><br></td> 
+  
+      </tr>
+      {% endfor %}
+      </tbody>
+    </div>
+    </table>
+    

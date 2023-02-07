@@ -1,0 +1,25 @@
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+
+<form method="POST" >
+    {% csrf_token %}
+<h1>Leaves</h1>
+   From Date : <input type="date" name="from_date"><br><br>
+   To Date : <input type="date" name="to_date"><br><br>
+   Leave_type :<select name="leave_type" >
+    <optgroup label="Select leave">
+    <option value="Sick Leave">Sick Leave</option>
+    <option value="Personal Leave">Personal Leave</option>
+    <option value="Emergency Leave">Emegency Leave </option>
+    <option value="Casual Leave">Casual Leave </option>
+    <option value="Marriage Leave">Marriage Leave </option>
+</optgroup>
+   </select><br><br>
+   Reason : <input type="text" name="reason"><br><br>
+   <input type="submit" value="Request">
+</form>
+
+
+

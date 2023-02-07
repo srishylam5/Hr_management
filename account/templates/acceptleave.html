@@ -1,0 +1,102 @@
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+
+
+
+<div class="card">
+<center>
+    <h3> LEAVE REQUESTS</h3>
+</center>
+<table class="table table-hover">
+    <thead>
+        <th>Requested Employee</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Leave Type</th>
+        <th>Reason</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        {% for i in a %}
+        
+        {% if i.is_approved == False and i.is_rejected == False and i.user.is_approved == True %}
+
+        <tr>
+            <td>{{i.user}}</td>
+            <td>{{i.from_date}}</td>
+            <td>{{i.to_date}}</td>
+            <td>{{i.leave_type}}</td>
+          <td>{{i.reason}}<td>
+            <td>
+                <a href = {% url 'approve' i.id %}>approve</a>
+                <a href = {% url 'reject' i.id %}>Reject</a>
+            </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+    </tbody>
+    </table>
+</div>
+<div class="card">
+<center>
+    <h3> LEAVE APPROVAL</h3>
+</center>
+    <table class="table table-hover">
+    <thead>
+        <th>Requested Employee</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Leave Type</th>
+        <th>Reason</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        {% for i in a %}
+        {% if i.is_approved == True  and i.user.is_approved == True %}
+
+        <tr>
+            <td>{{i.user}}</td>
+            <td>{{i.from_date}}</td>
+            <td>{{i.to_date}}</td>
+            <td>{{i.leave_type}}</td>
+          <td>{{i.reason}}<td>
+            <td><b style="color:green">APPROVED</b> </td>
+            
+        </tr>
+        {% endif %}
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+<div class="card">
+    <center>
+    <h3> LEAVE REJECTS</h3>
+</center>
+    <table class="table table-hover">
+    <thead>
+        <th>Requested Employee</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Leave Type</th>
+        <th>Reason</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        {% for i in a %}
+        {% if i.is_rejected == True  and i.user.is_approved == True %}
+
+        <tr>
+            <td>{{i.user}}</td>
+            <td>{{i.from_date}}</td>
+            <td>{{i.to_date}}</td>
+            <td>{{i.leave_type}}</td>
+          <td>{{i.reason}}<td>
+            <td><b style="color:red">REJECTED</b>
+            </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+    </tbody>
+</table>
+</div>

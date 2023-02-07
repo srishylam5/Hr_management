@@ -1,0 +1,19 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+
+{% for i in a %}
+
+<form action="" method="POST">
+            
+    {% csrf_token %}
+    <h3>{{i.user.username}}</h3>
+    <input type="text" name="username" placeholder="USERNAME"   value = "{{i.username}}" readonly>
+    <input type="text" name="firstname" placeholder="FIRSTNAME"   value = "{{i.first_name}}" required>
+    <input type="text" name="lastname" placeholder="LASTNAME"   value = "{{i.last_name}}" required>
+    <input type="email" name="email" placeholder="EMAIL"   value = "{{i.email}}" required>
+    <input type="text" name="mobile_number" placeholder="MOBILE NUMBER"   value = "{{i.mobile_number}}" required>
+    <input type="date" name="dob" placeholder="DATE OF BIRTH" id="sdob" value = "{{i.employee.dob}}" required> <small>{{i.employee.dob}}</small>
+    <input type="text" name="gender" placeholder="GENDER" id="sgender"  value = "{{i.employee.gender}}" required>
+    <input type="submit" name="editv" value="Edit">
+</form>
+{% endfor %}

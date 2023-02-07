@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+<body style="text-align:center">
+
+<h1>EDIT MANAGER </h1>
+<form action="" method="POST">
+            
+    {% csrf_token %}
+
+    <input type="text" name="username" placeholder="USERNAME"   value = "{{i.user.username}}" >
+    <input type="text" name="firstname" placeholder="FIRSTNAME"   value = "{{i.user.first_name}}" >
+    <input type="text" name="lastname" placeholder="LASTNAME"   value = "{{i.user.last_name}}" >
+    <input type="email" name="email" placeholder="EMAIL"   value = "{{i.user.email}}" >
+    <input type="text" name="mobile_number" placeholder="MOBILE NUMBER"   value = "{{i.user.mobile_number}}" >
+    <input type="text" name="dept" placeholder="PROFILE"   value = "{{i.profile}}" >
+    <input type="text" name="emp_id" placeholder="EMPLOYEE ID"   value = "{{i.emp_id}}" >
+    <input type="submit" name="editv" value="Edit">
+
+
+</form>
+
+</body>
